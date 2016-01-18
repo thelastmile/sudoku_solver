@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rock, Paper Scissors!</title>
+    <title>Sudoku Solver</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="lib/css/mocha.css" />
 
@@ -12,19 +12,19 @@
 
     <script>
       mocha.setup('bdd');
+      var expect = chai.expect;
     </script>
 
     <!-- Load student player file here -->
-    <script src="players/tamboura_jackson.js"></script>
+    <script src="src/solver.js"></script>
 
 
     <!-- load the student spec file here -->
-    <script src="spec/tamboura_jackson_spec.js"></script>
+    <script src="spec/solverSpec.js"></script>
 
 
     <script>
       onload = function(){
-        var expect = chai.expect;
         sinon.assert.expose(chai.assert, { prefix: "" });
         var runner = window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
         runner.on('end', function() {
