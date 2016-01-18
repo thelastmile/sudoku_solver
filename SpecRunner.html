@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper Scissors!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="lib/css/mocha.css" />
+
+    <script src="lib/mocha.js"></script>
+    <script src="lib/chai.js"></script>
+    <script src="lib/sinon.js"></script>
+    <script src="lib/sinon-chai.js"></script>
+
+    <script>
+      mocha.setup('bdd');
+    </script>
+
+    <!-- Load student player file here -->
+    <script src="players/tamboura_jackson.js"></script>
+
+
+    <!-- load the student spec file here -->
+    <script src="spec/tamboura_jackson_spec.js"></script>
+
+
+    <script>
+      onload = function(){
+        var expect = chai.expect;
+        sinon.assert.expose(chai.assert, { prefix: "" });
+        var runner = window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+        runner.on('end', function() {
+          if(!this.failures){
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+  </body>
+</html>
